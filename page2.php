@@ -8,6 +8,6 @@
 <body>
 <div id="dropdownList"></div>
 
-<script src="include/page2-script.js"></script>
+<script src="js/page2-script.js"></script>
 </body>
 </html>
