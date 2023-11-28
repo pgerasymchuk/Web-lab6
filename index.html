@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+</head>
+<body>
+
+<form id="dropdownForm">
+    <label for="itemName">Item Name:</label>
+    <input type="text" id="itemName" required>
+
+    <div id="keyValuePairs">
+        <div class="keyValue">
+            <input type="text" class="key" placeholder="Key">
+            <input type="text" class="value" placeholder="Value">
+        </div>
+    </div>
+
+    <button type="button" onclick="addKeyValuePair()">Add Key-Value Pair</button>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+</form>
+
+<script src="include/index-script.js"></script>
+</body>
+</html>
+
