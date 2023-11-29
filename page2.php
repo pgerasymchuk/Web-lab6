@@ -17,7 +17,6 @@
 <div class="area-23456">
     <nav class="area-2 orange">
         <h4>Area 2</h4>
-        <h4>Site map</h4>
     </nav>
 
     <main class="area-3456">
@@ -32,7 +31,7 @@
                     <h4>Area 4</h4>
                     <h2>This is main page</h2>
 
-                    <div id="dropdown-menu"></div>
+                    <div id="menu"></div>
 
                 </article>
 

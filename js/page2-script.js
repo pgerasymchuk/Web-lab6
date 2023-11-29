@@ -1,40 +1,50 @@
-function fetchData() {
-    var url = 'getData.php';
-    var xhr = new XMLHttpRequest();
+function updateMenu() {
+    const xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            var data = JSON.parse(xhr.responseText);
-            displayDropdownMenu(data);
+            displayMenu(JSON.parse(xhr.responseText));
         }
     };
 
-    xhr.open('GET', url, true);
+    xhr.open('GET', 'getData.php', true);
     xhr.send();
 }
 
-function displayDropdownMenu(dropdowns){
+function displayMenu(menuData){
 
-    const dropdownMenu = document.getElementById('dropdown-menu');
-    dropdownMenu.innerHTML = '';
+    const menu = document.getElementById('menu');
+    menu.innerHTML = '';
 
-    for (let dropdown of dropdowns){
+    for (let dropdownData of menuData){
 
-        const dropdownElem = document.createElement('div');
-        dropdownElem.className = 'dropdown';
-        dropdownElem.textContent = dropdown.dropdownName;
-        dropdownMenu.appendChild(dropdownElem);
+        const dropdown = document.createElement('div');
+        dropdown.className = 'dropdown';
 
-        for (let item of dropdown.dropdownItems){
-            const itemElem = document.createElement('a');
-            itemElem.className = 'itemDiv';
-            itemElem.textContent = item.itemName;
-            itemElem.href = item.itemLink;
-            dropdownElem.appendChild(itemElem);
+        const dropdownBtn = document.createElement('button');
+        dropdownBtn.className = 'dropdown-button'
+        dropdownBtn.textContent = dropdownData.dropdownName;
+        dropdown.appendChild(dropdownBtn);
+
+        const dropdownItems = document.createElement('div');
+        dropdownItems.className = 'dropdown-items';
+
+        for (let itemData of dropdownData.dropdownItems){
+            const item = document.createElement('a');
+            item.textContent = itemData.itemName;
+            item.href = itemData.itemLink;
+            dropdownItems.appendChild(item);
         }
+
+        dropdown.appendChild(dropdownItems);
+        menu.appendChild(dropdown);
 
     }
 }
+
+setInterval(updateMenu, 1000000);
+
+updateMenu();
 
 /*function displayDropdown(data) {
     var dropdownList = document.getElementById('dropdownList');
@@ -47,6 +57,3 @@ function displayDropdownMenu(dropdowns){
     }
 }*/
 
-setInterval(fetchData, 1000000);
-
-fetchData();
