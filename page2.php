@@ -15,8 +15,12 @@
 </header>
 
 <div class="area-23456">
-    <nav class="area-2 orange">
-        <h4>Area 2</h4>
+    <nav class="area-2 orange"><h4>Area 2</h4>
+        <h4>Site map</h4>
+        <ul>
+            <li><a href="index.html">Main page</a></li>
+            <li><a href="page2.html">Page2</a></li>
+        </ul>
     </nav>
 
     <main class="area-3456">

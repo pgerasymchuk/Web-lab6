@@ -22,7 +22,6 @@ function displayMenu(menuData){
         dropdown.className = 'dropdown';
 
         const dropdownBtn = document.createElement('button');
-        dropdownBtn.className = 'dropdown-button'
         dropdownBtn.textContent = dropdownData.dropdownName;
         dropdown.appendChild(dropdownBtn);
 
@@ -42,18 +41,6 @@ function displayMenu(menuData){
     }
 }
 
-setInterval(updateMenu, 1000000);
+setInterval(updateMenu, 1000);
 
 updateMenu();
-
-/*function displayDropdown(data) {
-    var dropdownList = document.getElementById('dropdownList');
-    dropdownList.innerHTML = '<h2>' + data.name + '</h2>';
-
-    var keyValuePairs = data.keyValuePairs;
-    for (var i = 0; i < keyValuePairs.length; i++) {
-        var pair = keyValuePairs[i];
-        dropdownList.innerHTML += '<p><strong>' + pair.key + ':</strong> ' + pair.value + '</p>';
-    }
-}*/
-

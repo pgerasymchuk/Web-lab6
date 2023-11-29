@@ -3,6 +3,7 @@
 <head>
     <title>My website</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/index-style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -17,6 +18,10 @@
     <nav class="area-2 orange">
         <h4>Area 2</h4>
         <h4>Site map</h4>
+        <ul>
+            <li><a href="index.html">Main page</a></li>
+            <li><a href="page2.html">Page2</a></li>
+        </ul>
     </nav>
 
     <main class="area-3456">
@@ -33,15 +38,7 @@
 
                     <form id="dropdownForm">
 
-                        <div id="dropdowns">
-                            <div class="dropdown">
-                                <input type="text" class="dropdownName" placeholder="Dropdown Name">
-                                <div class="item">
-                                    <input type="text" class="itemName" placeholder="Item Name">
-                                    <input type="text" class="itemLink" placeholder="Item Link">
-                                </div>
-                            </div>
-                        </div>
+                        <div id="dropdowns"></div>
 
                         <button type="button" onclick="addDropdown()">Add Dropdown</button>
                         <button type="button" onclick="addItem()">Add Item</button>
