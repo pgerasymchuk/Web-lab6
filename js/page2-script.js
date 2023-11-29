@@ -5,7 +5,7 @@ function fetchData() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var data = JSON.parse(xhr.responseText);
-            displayDropdown(data);
+            displayDropdownMenu(data);
         }
     };
 
@@ -13,7 +13,30 @@ function fetchData() {
     xhr.send();
 }
 
-function displayDropdown(data) {
+function displayDropdownMenu(dropdowns){
+
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    dropdownMenu.innerHTML = '';
+
+    for (let dropdown of dropdowns){
+
+        const dropdownElem = document.createElement('div');
+        dropdownElem.className = 'dropdown';
+        dropdownElem.textContent = dropdown.dropdownName;
+        dropdownMenu.appendChild(dropdownElem);
+
+        for (let item of dropdown.dropdownItems){
+            const itemElem = document.createElement('a');
+            itemElem.className = 'itemDiv';
+            itemElem.textContent = item.itemName;
+            itemElem.href = item.itemLink;
+            dropdownElem.appendChild(itemElem);
+        }
+
+    }
+}
+
+/*function displayDropdown(data) {
     var dropdownList = document.getElementById('dropdownList');
     dropdownList.innerHTML = '<h2>' + data.name + '</h2>';
 
@@ -22,8 +45,8 @@ function displayDropdown(data) {
         var pair = keyValuePairs[i];
         dropdownList.innerHTML += '<p><strong>' + pair.key + ':</strong> ' + pair.value + '</p>';
     }
-}
+}*/
 
-setInterval(fetchData, 1000);
+setInterval(fetchData, 1000000);
 
 fetchData();

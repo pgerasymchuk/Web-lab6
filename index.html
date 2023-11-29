@@ -32,18 +32,19 @@
                     <h2>This is main page</h2>
 
                     <form id="dropdownForm">
-                        <label for="itemName">Item Name:</label>
-                        <input type="text" id="itemName" required>
 
-                        <div id="keyValuePairs">
-                            <div class="keyValue">
-                                <input type="text" class="key" placeholder="Key">
-                                <input type="text" class="value" placeholder="Value">
+                        <div id="dropdowns">
+                            <div class="dropdown">
+                                <input type="text" class="dropdownName" placeholder="Dropdown Name">
+                                <div class="item">
+                                    <input type="text" class="itemName" placeholder="Item Name">
+                                    <input type="text" class="itemLink" placeholder="Item Link">
+                                </div>
                             </div>
                         </div>
 
-                        <button type="button" onclick="addKeyValuePair()">Add Key-Value Pair</button>
-
+                        <button type="button" onclick="addDropdown()">Add Dropdown</button>
+                        <button type="button" onclick="addItem()">Add Item</button>
                         <button type="button" onclick="submitForm()">Submit</button>
                     </form>
 
